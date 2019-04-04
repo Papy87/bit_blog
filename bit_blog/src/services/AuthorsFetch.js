@@ -19,7 +19,7 @@ class AuthorFetch {
                 return response.json();
             }).then((response) => {
 
-                console.log(response)
+                // console.log(response)
                 return response
             })
     }

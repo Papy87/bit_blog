@@ -21,11 +21,24 @@ class PostService {
             .then(response => {
                 return response.json();
             }).then(apiPosts => {
-                return apiPosts.slice(0, 30)
+                return apiPosts
                     .map(({ userId, title, id, body }) => {
                         return new Post(userId, title, id, body);
                     });
             })
+    }
+
+    fetchPostsList(postId){
+        const userEndpoint=`${ApiBase}posts?userId=${postId}`;
+        return fetch(userEndpoint)
+        .then(respons=>{
+            // console.log(respons)
+            return respons.json();
+        }).then((apiUser)=>{
+            return apiUser
+            
+            
+        })
     }
 }
 
